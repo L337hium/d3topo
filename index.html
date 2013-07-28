@@ -11,6 +11,9 @@
           stroke: #FFFFFF;
           stroke-width: 1px;
         }
+  #graph {
+        width: 100%;
+  }
     </style>
 
 		<title>stats.funkfeuer.at</title>
@@ -54,11 +57,8 @@ Click here for <a href="data/">raw data</a>. The data is collected every 5 minut
 <script src="d3.v3.min.js" charset="utf-8"></script>
 <script src="underscore-min.js"></script>
 <script>
-var data;
 d3.tsv("current-topo.tsv", function(d) {
-  data=d;
-
-  width=1024;
+  width=document.getElementById("graph").offsetWidth;
   height=768;
   var force = d3.layout.force()
       .charge(-40)
