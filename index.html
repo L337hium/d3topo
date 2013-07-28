@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-.link {
-  stroke: #999;
-  stroke-opacity: .6;
-  }
-</style>
+	<head>
+	<META HTTP-EQUIV="refresh" CONTENT="300">
+		<style>
+				.link {
+				stroke: #999;
+				stroke-opacity: .6;
+			  }
+    </style>
+
+		<title>stats.funkfeuer.at</title>
+		<link rel="stylesheet" href="/style.css" type="text/css" />
 </head>
 
 <body>
-<div id="graph">
+
+<div class=container>
+<div class=navigation>
+	<img src="/header.png" alt="header graphic" width=100%/><br>
+	<ul>
+		<li><a href="/traffic/graphs/freenet">freenet</a>
+		<li><a href="/traffic/graphs/housing">housing</a>
+		<li><a href="/traffic/graphs/confine">confine</a>
+		<li><a href="/traffic/graphs/customers">custom IP space</a>
+		<li><a href="/traffic/graphs/unused">unused</a>
+		<li><a href="/archive/">archive</a>
+		<li><a href="/index.html">about</a>
+	</ul>
+	<p>
+	<hr>
 </div>
+<div class=body>
+
+<h1>Raw data</h1>
+Click here for <a href="data/">raw data</a>. The data is collected every 5 minutes.
+
+<p/>
+<h1>
+	Live graph of the topology
+</h1>
+
+<div id="graph">
+
+
+</div> <!-- body -->
+
 
 
 <script src="d3.v3.min.js" charset="utf-8"></script>
