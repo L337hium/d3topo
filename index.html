@@ -4,12 +4,13 @@
 	<META HTTP-EQUIV="refresh" CONTENT="300">
 		<style>
 				.link {
-				  stroke: #999;
-				  stroke-opacity: .6;
+          stroke: #a1c820;
+          stroke-opacity: .6;
 			  }
         .node {
-          stroke: #FFFFFF;
+          stroke: #6d8092;
           stroke-width: 1px;
+          fill: #273142;
         }
   #graph {
         width: 100%;
@@ -95,7 +96,7 @@ d3.tsv("current-topo.tsv", function(d) {
       return (((n-min)/(max-min)*(max_rad-min_rad)+min_rad))
       }
     }(degree);
-  console.log(radius);
+
   function cost(x) {
     var c=1/x*5;
     if (isNaN(c)) {
