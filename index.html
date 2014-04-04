@@ -2,20 +2,42 @@
 <html>
 <head>
 <style>
-.link {
-	stroke: #a1c820;
-	stroke-opacity: .6;
-}
-
-.node {
-	stroke: #6d8092;
-	stroke-width: 1px;
-	fill: #ccc /*#273142*/;
-}
-
 #graph {
 	width: 100%;
 }
+
+.link {
+	stroke: PaleGreen;
+	stroke-opacity: .6;
+}
+
+.link.active {
+	stroke: SeaGreen;
+	stroke-width: 2px;
+	stroke-opacity: 1;
+}
+
+
+.node {
+	stroke: SlateGray;
+	stroke-width: 1px;
+	fill: LightSteelBlue;
+}
+
+.node circle {
+
+}
+
+.node.active {
+	stroke: DarkSlateGray;
+	stroke-width: 1px;
+	fill: SteelBlue;
+}
+
+.node.text {
+	
+}
+
 </style>
 </head>
 
