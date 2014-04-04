@@ -1,13 +1,31 @@
 d3.tsv("current-topo.tsv", function(d) {
+
+var json = (function () {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "http://localhost:8000/current-hostnames.json",
+        'dataType': "json",
+        'success': function (data) {
+            json = data;
+        }
+    });
+    return json;
+})(); 
+
+console.log(json);
+
 	width = document.getElementById("graph").offsetWidth;
-	height = 1000;
+	height = 1680;
 
 	var force = d3.layout.force()
-			.charge(-120)
-			.linkDistance(50) /* 75 25 */
+			.charge(-120) /*-120*/
+			.linkDistance(Math.random()*50*1/cost(d.cost)) /* 75 25 */
 			.size([width, height]);
 
-	var svg = d3.select("#graph").append("svg")
+	var svg = d3.select("#graph")
+			.append("svg")
 			.attr("width", width)
 			.attr("height", height);
            
@@ -91,7 +109,7 @@ d3.tsv("current-topo.tsv", function(d) {
 			.attr("dy", 24 /*".35em"*/)
 			.style("font-size", "10px")
 			.attr("xlink:href", function(d) { return "http://"+d.name; })
-			.append("svg:text").text(function(d) { return d.name; });
+			.append("svg:text").text(function(d) { var name = d.name; return d.name+" - "+json[name]; });
 
 /*		node.append("text")
 			.attr("dx", 12)
